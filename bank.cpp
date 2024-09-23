@@ -100,10 +100,10 @@ class CurrentAccount : public Account {
 		// Override checkBalance function
 		void checkBalance() override {
 			if (getBalance() <= 0) {
-				cout << "\n   No balance yet. Deposit money.\n";
-			} else {
+				cout << "\n   No balance yet. Deposit money.\n"; }
+				else {
 				cout << "   Current Balance: " << getBalance() << endl;
-			}
+		}
 		}
 };
 
@@ -146,9 +146,11 @@ int main() {
 						}
 						case 2: {
 							cout << "\n\tWITHDRAW\n";
-							save.checkBalance();  
+							if(save.getBalance()==0){
+							save.checkBalance();  }
+							else {
 							withdraw = getValidatedInput("\n   Enter amount to withdraw: P ");  
-							save.withdrawMoney(withdraw);
+							save.withdrawMoney(withdraw); }
 							break;
 						}
 						case 3: {
@@ -192,9 +194,11 @@ int main() {
 						}
 						case 2: {
 							cout << "\n\tWITHDRAW\n";
-							currAcc.checkBalance();  
+							if(save.getBalance()==0){
+							save.checkBalance();  }
+							else {
 							withdraw = getValidatedInput("\n   Enter amount to withdraw: P ");  
-							currAcc.withdrawMoney(withdraw); 
+							save.withdrawMoney(withdraw); }
 							break;
 						}
 						case 3: {
